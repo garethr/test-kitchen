@@ -31,6 +31,8 @@ module Kitchen
     # @return [Array] Array of Chef run_list items
     attr_reader :run_list
 
+    attr_reader :provisioner
+
     # @return [Hash] Hash of Chef node attributes
     attr_reader :attributes
 
@@ -46,6 +48,7 @@ module Kitchen
       validate_options(options)
 
       @name = options[:name]
+      @provisioner = options[:provisioner]
       @run_list = Array(options[:run_list])
       @attributes = options[:attributes] || Hash.new
     end

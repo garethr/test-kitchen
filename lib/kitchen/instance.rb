@@ -102,6 +102,10 @@ module Kitchen
       platform.attributes.rmerge(suite.attributes)
     end
 
+    def provisioner
+      platform.provisioner
+    end
+
     def dna
       attributes.rmerge({ :run_list => run_list })
     end
